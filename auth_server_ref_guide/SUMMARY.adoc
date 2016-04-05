@@ -32,9 +32,6 @@ Let's pretend to have an extremely long line that does not fit
 This one is short
 ----      
 
- . link:modules/Overview.adoc[Overview]
-
-
 // Overview
 include::modules/Overview.adoc[leveloffset=+1]
 
