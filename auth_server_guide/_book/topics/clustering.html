@@ -1,0 +1,1124 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Clustering | Keycloak</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../topics/application-clustering.html" />
+    
+    
+    <link rel="prev" href="../topics/security-vulnerabilities.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="29"
+        data-chapter-title="Clustering"
+        data-filepath="topics/clustering.adoc"
+        data-basepath=".."
+        data-revision="Tue Apr 05 2016 21:38:08 GMT+0530 (IST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="topics/preface.html">
+            
+            <span><b>1.</b> Overview</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="topics/Overview.html">
+            
+                
+                    <a href="../topics/Overview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Overview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="topics/server-installation.html">
+            
+                
+                    <a href="../topics/server-installation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Installation and Configuration of Keycloak Server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="topics/providers.html">
+            
+                
+                    <a href="../topics/providers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Providers and SPIs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="topics/openshift.html">
+            
+                
+                    <a href="../topics/openshift.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Running Keycloak Server on OpenShift
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="topics/admin-permissions.html">
+            
+                
+                    <a href="../topics/admin-permissions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Master Admin Access Control
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="topics/per-realm-admin-permissions.html">
+            
+                
+                    <a href="../topics/per-realm-admin-permissions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Per Realm Admin Access Control
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="topics/adapter-config.html">
+            
+                
+                    <a href="../topics/adapter-config.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Adapters
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="topics/jboss-adapter.html">
+            
+                
+                    <a href="../topics/jboss-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        JBoss/Wildfly Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="topics/tomcat-adapter.html">
+            
+                
+                    <a href="../topics/tomcat-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        Tomcat 6, 7 and 8 Adapters
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="topics/jetty9-adapter.html">
+            
+                
+                    <a href="../topics/jetty9-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        Jetty 9.x Adapters
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="topics/jetty8-adapter.html">
+            
+                
+                    <a href="../topics/jetty8-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        Jetty 8.1.x Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="topics/servlet-filter-adapter.html">
+            
+                
+                    <a href="../topics/servlet-filter-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                        Java Servlet Filter Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="topics/fuse-adapter.html">
+            
+                
+                    <a href="../topics/fuse-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                        JBoss Fuse and Apache Karaf Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="topics/javascript-adapter.html">
+            
+                
+                    <a href="../topics/javascript-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.7.</b>
+                        
+                        Javascript Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="topics/spring-boot-adapter.html">
+            
+                
+                    <a href="../topics/spring-boot-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.8.</b>
+                        
+                        Spring Boot Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="topics/spring-security-adapter.html">
+            
+                
+                    <a href="../topics/spring-security-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.9.</b>
+                        
+                        Spring Security Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="topics/installed-applications.html">
+            
+                
+                    <a href="../topics/installed-applications.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.10.</b>
+                        
+                        Installed Applications
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="topics/logout.html">
+            
+                
+                    <a href="../topics/logout.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.11.</b>
+                        
+                        Logout
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="topics/adapter_error_handling.html">
+            
+                
+                    <a href="../topics/adapter_error_handling.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.12.</b>
+                        
+                        Error Handling
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="topics/multi-tenancy.html">
+            
+                
+                    <a href="../topics/multi-tenancy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.13.</b>
+                        
+                        Multi Tenancy
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="topics/jaas.html">
+            
+                
+                    <a href="../topics/jaas.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.14.</b>
+                        
+                        JAAS plugin
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="topics/client-registration.html">
+            
+                
+                    <a href="../topics/client-registration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Client Registration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="topics/identity-broker.html">
+            
+                
+                    <a href="../topics/identity-broker.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Identity Broker
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="topics/themes.html">
+            
+                
+                    <a href="../topics/themes.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Themes
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="topics/recaptcha.html">
+            
+                
+                    <a href="../topics/recaptcha.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Recaptcha Support on Registration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="topics/email.html">
+            
+                
+                    <a href="../topics/email.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Email
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="topics/access-types.html">
+            
+                
+                    <a href="../topics/access-types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        Client Access Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="topics/roles.html">
+            
+                
+                    <a href="../topics/roles.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Roles
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="topics/groups.html">
+            
+                
+                    <a href="../topics/groups.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Groups
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="topics/direct-access.html">
+            
+                
+                    <a href="../topics/direct-access.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Direct Access Grants
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="topics/service-accounts.html">
+            
+                
+                    <a href="../topics/service-accounts.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        Service Accounts
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="19" data-path="topics/cors.html">
+            
+                
+                    <a href="../topics/cors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>19.</b>
+                        
+                        CORS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="20" data-path="topics/timeouts.html">
+            
+                
+                    <a href="../topics/timeouts.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>20.</b>
+                        
+                        Cookie settings, Session Timeouts, and Token Lifespans
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="21" data-path="topics/admin-rest-api.html">
+            
+                
+                    <a href="../topics/admin-rest-api.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>21.</b>
+                        
+                        Admin REST API
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="22" data-path="topics/events.html">
+            
+                
+                    <a href="../topics/events.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>22.</b>
+                        
+                        Events
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="23" data-path="topics/user-federation.html">
+            
+                
+                    <a href="../topics/user-federation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>23.</b>
+                        
+                        User Federation SPI and LDAP/AD Integration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="24" data-path="topics/kerberos.html">
+            
+                
+                    <a href="../topics/kerberos.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>24.</b>
+                        
+                        Kerberos brokering
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="25" data-path="topics/export-import.html">
+            
+                
+                    <a href="../topics/export-import.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>25.</b>
+                        
+                        Export and Import
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="26" data-path="topics/cache.html">
+            
+                
+                    <a href="../topics/cache.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>26.</b>
+                        
+                        Server Cache
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="27" data-path="topics/saml.html">
+            
+                
+                    <a href="../topics/saml.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>27.</b>
+                        
+                        SAML SSO
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="28" data-path="topics/security-vulnerabilities.html">
+            
+                
+                    <a href="../topics/security-vulnerabilities.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>28.</b>
+                        
+                        Security Vulnerabilities
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="29" data-path="topics/clustering.html">
+            
+                
+                    <a href="../topics/clustering.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>29.</b>
+                        
+                        Clustering
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="30" data-path="topics/application-clustering.html">
+            
+                
+                    <a href="../topics/application-clustering.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>30.</b>
+                        
+                        Application Clustering
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="31" data-path="topics/proxy.html">
+            
+                
+                    <a href="../topics/proxy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>31.</b>
+                        
+                        Keycloak Security Proxy
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="32" data-path="topics/custom-attributes.html">
+            
+                
+                    <a href="../topics/custom-attributes.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>32.</b>
+                        
+                        Custom User Attributes
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="33" data-path="topics/protocol-mappers.html">
+            
+                
+                    <a href="../topics/protocol-mappers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>33.</b>
+                        
+                        OIDC Token and SAML Assertion Mappings
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="34" data-path="topics/auth-spi.html">
+            
+                
+                    <a href="../topics/auth-spi.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>34.</b>
+                        
+                        Custom Authentication, Registration, and Required Actions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="35" data-path="topics/MigrationFromOlderVersions.html">
+            
+                
+                    <a href="../topics/MigrationFromOlderVersions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>35.</b>
+                        
+                        Migration from older versions
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Keycloak</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="clustering">Clustering</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>To improve availability and scalability Keycloak can be deployed in a cluster.</p>
+</div>
+<div class="paragraph">
+<p>It&#x2019;s fairly straightforward to configure a Keycloak cluster, the steps required are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Configure a shared database</p>
+</li>
+<li>
+<p>Configure Infinispan</p>
+</li>
+<li>
+<p>Enable realm and user cache invalidation</p>
+</li>
+<li>
+<p>Enable distributed user sessions</p>
+</li>
+<li>
+<p>Start in HA mode</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configure_a_shared_database">Configure a shared database</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Keycloak doesn&#x2019;t replicate realms and users, but instead relies on all nodes using the same database.
+This can be a relational database or Mongo.
+To make sure your database doesn&#x2019;t become a single point of failure you may also want to deploy your database to a cluster.</p>
+</div>
+<div class="sect2">
+<h3 id="_db_lock">DB lock</h3>
+<div class="paragraph">
+<p>Note that Keycloak supports concurrent startup by more cluster nodes at the same.
+This is ensured by DB lock, which prevents that some startup actions (migrating database from previous version, importing realms at startup, initial bootstrap of admin user) are always executed just by one cluster node at a time and other cluster nodes need to wait until the current node finishes startup actions and release the DB lock.</p>
+</div>
+<div class="paragraph">
+<p>By default, the maximum timeout for lock is 900 seconds, so in case that second node is not able to acquire the lock within 900 seconds, it fails to start.
+The lock checking is done every 2 seconds by default.
+Typically you won&#x2019;t need to increase/decrease the default value, but just in case it&#x2019;s possible to configure it in <code>standalone/configuration/keycloak-server.json</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json"><span class="hljs-string">&quot;dblock&quot;</span>: {
+    <span class="hljs-string">&quot;jpa&quot;</span>: {
+        <span class="hljs-string">&quot;lockWaitTimeout&quot;</span>: <span class="hljs-number">900</span>,
+        <span class="hljs-string">&quot;lockRecheckTime&quot;</span>: <span class="hljs-number">2</span>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or similarly if you&#x2019;re using Mongo (just by replace <code>jpa</code> with <code>mongo</code>)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configure_infinispan">Configure Infinispan</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Keycloak uses <a href="http://www.infinispan.org/" target="_blank">Infinispan</a> caches to share information between nodes.</p>
+</div>
+<div class="paragraph">
+<p>For realm and users Keycloak uses a invalidation cache.
+An invalidation cache doesn&#x2019;t share any data, but simply removes stale data from remote caches and makes sure all nodes re-load data from the database when it is changed.
+This reduces network traffic, as well as preventing sensitive data (such as realm keys and password hashes) from being sent between the nodes.</p>
+</div>
+<div class="paragraph">
+<p>User sessions and login failures supports either distributed caches or fully replicated caches.
+We recommend using a distributed cache.
+A distributed cache splits user sessions into segments where each node holds one or more segment.
+It is possible to replicate each segment to multiple nodes, but this is not strictly necessary since the failure of a node will only result in users having to log in again.
+If you need to prevent node failures from requiring users to log in again, set the <code>owners</code> attribute to 2 or more for the <code>sessions</code> cache of <code>infinispan/Keycloak</code> container as described below.</p>
+</div>
+<div class="paragraph">
+<p>The infinispan container is set by default in <code>standalone/configuration/keycloak-server.json</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json"><span class="hljs-string">&quot;connectionsInfinispan&quot;</span>: {
+    <span class="hljs-string">&quot;default&quot;</span> : {
+        <span class="hljs-string">&quot;cacheContainer&quot;</span> : <span class="hljs-string">&quot;java:jboss/infinispan/Keycloak&quot;</span>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see in this file, the realmCache, userCache and userSession providers are configured to use infinispan by default, which applies for both cluster and non-cluster environment.</p>
+</div>
+<div class="paragraph">
+<p>For non-cluster configuration (server executed with <code>standalone.xml</code> ) is the infinispan container <code>infinispan/Keycloak</code> just uses local infinispan caches for realms, users and userSessions.</p>
+</div>
+<div class="paragraph">
+<p>For cluster configuration, you can edit the configuration of <code>infinispan/Keycloak</code> container in <code>standalone/configuration/standalone-ha.xml</code> (or <code>standalone-keycloak-ha.xml</code> if you are using overlay or demo distribution) .</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_start_in_ha_mode">Start in HA mode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To start the server in HA mode, start it with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code># bin/standalone --server-config=standalone-ha.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or if you are using overlay or demo distribution with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code># bin/standalone --server-config=standalone-keycloak-ha.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Alternatively you can copy <code>standalone/config/standalone-ha.xml</code> to <code>standalone/config/standalone.xml</code>            to make it the default server config.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_enabling_cluster_security">Enabling cluster security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default there&#x2019;s nothing to prevent unauthorized nodes from joining the cluster and sending potentially malicious messages to the cluster.
+However, as there&#x2019;s no sensitive data sent there&#x2019;s not much that can be achieved.
+For realms and users all that can be done is to send invalidation messages to make nodes load data from the database more frequently.
+For user sessions it would be possible to modify existing user sessions, but creating new sessions would have no affect as they would not be linked to any access tokens.
+There&#x2019;s not too much that can be achieved by modifying user sessions.
+For example it would be possible to prevent sessions from expiring, by changing the creation time.
+However, it would for example have no effect adding additional permissions to the sessions as these are rechecked against the user and application when the token is created or refreshed.</p>
+</div>
+<div class="paragraph">
+<p>In either case your cluster nodes should be in a private network, with a firewall protecting them from outside attacks.
+Ideally isolated from workstations and laptops.
+You can also enable encryption of cluster messages, this could for example be useful if you can&#x2019;t isolate cluster nodes from workstations and laptops on your private network.
+However, encryption will obviously come at a cost of reduced performance.</p>
+</div>
+<div class="paragraph">
+<p>To enable encryption of cluster messages you first have to create a shared keystore (change the key and store passwords!):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code># keytool -genseckey -alias keycloak -keypass &lt;PASSWORD&gt; -storepass &lt;PASSWORD&gt; \
+ -keyalg Blowfish -keysize 56 -keystore defaultStore.keystore -storetype JCEKS</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Copy this keystore to all nodes (for example to standalone/configuration). Then configure JGroups to encrypt all messages by adding the <code>ENCRYPT</code> protocol to the JGroups sub-system (this should be added after the <code>pbcast.GMS</code> protocol):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>&lt;subsystem xmlns=&quot;urn:jboss:domain:jgroups:2.0&quot; default-stack=&quot;udp&quot;&gt;
+    &lt;stack name=&quot;udp&quot;&gt;
+        ...
+        &lt;protocol type=&quot;pbcast.GMS&quot;/&gt;
+        &lt;protocol type=&quot;ENCRYPT&quot;&gt;
+            &lt;property name=&quot;key_store_name&quot;&gt;
+                ${jboss.server.config.dir}/defaultStore.keystore
+            &lt;/property&gt;
+            &lt;property name=&quot;key_password&quot;&gt;PASSWORD&lt;/property&gt;
+            &lt;property name=&quot;store_password&quot;&gt;PASSWORD&lt;/property&gt;
+            &lt;property name=&quot;alias&quot;&gt;keycloak&lt;/property&gt;
+        &lt;/protocol&gt;
+        ...
+    &lt;/stack&gt;
+    &lt;stack name=&quot;tcp&quot;&gt;
+        ...
+        &lt;protocol type=&quot;pbcast.GMS&quot;/&gt;
+        &lt;protocol type=&quot;ENCRYPT&quot;&gt;
+            &lt;property name=&quot;key_store_name&quot;&gt;
+                ${jboss.server.config.dir}/defaultStore.keystore
+            &lt;/property&gt;
+            &lt;property name=&quot;key_password&quot;&gt;PASSWORD&lt;/property&gt;
+            &lt;property name=&quot;store_password&quot;&gt;PASSWORD&lt;/property&gt;
+            &lt;property name=&quot;alias&quot;&gt;keycloak&lt;/property&gt;
+        &lt;/protocol&gt;
+        ...
+    &lt;/stack&gt;
+    ...
+&lt;/subsystem&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See the <a href="http://www.jgroups.org/manual/index.html#ENCRYPT" target="_blank">JGroups manual</a> for more details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Note that when you run cluster, you should see message similar to this in the log of both cluster nodes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (Incoming-10,shared=udp)
+ISPN000094: Received new cluster view: [node1/keycloak|1] (2) [node1/keycloak, node2/keycloak]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you see just one node mentioned, it&#x2019;s possible that your cluster hosts are not joined together.</p>
+</div>
+<div class="paragraph">
+<p>Usually it&#x2019;s best practice to have your cluster nodes on private network without firewall for communication among them.
+Firewall could be enabled just on public access point to your network instead.
+If for some reason you still need to have firewall enabled on cluster nodes, you will need to open some ports.
+Default values are UDP port 55200 and multicast port 45688 with multicast address 230.0.0.4.
+Note that you may need more ports opened if you want to enable additional features like diagnostics for your JGroups stack.
+Keycloak delegates most of the clustering work to Infinispan/JGroups, so consult EAP or JGroups documentation for more info.</p>
+</div>
+</div>
+</div>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../topics/security-vulnerabilities.html" class="navigation navigation-prev " aria-label="Previous page: Security Vulnerabilities"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../topics/application-clustering.html" class="navigation navigation-next " aria-label="Next page: Application Clustering"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

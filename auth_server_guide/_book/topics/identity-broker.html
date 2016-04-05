@@ -1,0 +1,2133 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Identity Broker | Keycloak</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../topics/themes.html" />
+    
+    
+    <link rel="prev" href="../topics/client-registration.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="10"
+        data-chapter-title="Identity Broker"
+        data-filepath="topics/identity-broker.adoc"
+        data-basepath=".."
+        data-revision="Tue Apr 05 2016 21:38:08 GMT+0530 (IST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="topics/preface.html">
+            
+            <span><b>1.</b> Overview</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="topics/Overview.html">
+            
+                
+                    <a href="../topics/Overview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Overview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="topics/server-installation.html">
+            
+                
+                    <a href="../topics/server-installation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Installation and Configuration of Keycloak Server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="topics/providers.html">
+            
+                
+                    <a href="../topics/providers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Providers and SPIs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="topics/openshift.html">
+            
+                
+                    <a href="../topics/openshift.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Running Keycloak Server on OpenShift
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="topics/admin-permissions.html">
+            
+                
+                    <a href="../topics/admin-permissions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Master Admin Access Control
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="topics/per-realm-admin-permissions.html">
+            
+                
+                    <a href="../topics/per-realm-admin-permissions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Per Realm Admin Access Control
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="topics/adapter-config.html">
+            
+                
+                    <a href="../topics/adapter-config.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Adapters
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="topics/jboss-adapter.html">
+            
+                
+                    <a href="../topics/jboss-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        JBoss/Wildfly Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="topics/tomcat-adapter.html">
+            
+                
+                    <a href="../topics/tomcat-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        Tomcat 6, 7 and 8 Adapters
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="topics/jetty9-adapter.html">
+            
+                
+                    <a href="../topics/jetty9-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        Jetty 9.x Adapters
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="topics/jetty8-adapter.html">
+            
+                
+                    <a href="../topics/jetty8-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        Jetty 8.1.x Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="topics/servlet-filter-adapter.html">
+            
+                
+                    <a href="../topics/servlet-filter-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                        Java Servlet Filter Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="topics/fuse-adapter.html">
+            
+                
+                    <a href="../topics/fuse-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                        JBoss Fuse and Apache Karaf Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="topics/javascript-adapter.html">
+            
+                
+                    <a href="../topics/javascript-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.7.</b>
+                        
+                        Javascript Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="topics/spring-boot-adapter.html">
+            
+                
+                    <a href="../topics/spring-boot-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.8.</b>
+                        
+                        Spring Boot Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="topics/spring-security-adapter.html">
+            
+                
+                    <a href="../topics/spring-security-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.9.</b>
+                        
+                        Spring Security Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="topics/installed-applications.html">
+            
+                
+                    <a href="../topics/installed-applications.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.10.</b>
+                        
+                        Installed Applications
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="topics/logout.html">
+            
+                
+                    <a href="../topics/logout.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.11.</b>
+                        
+                        Logout
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="topics/adapter_error_handling.html">
+            
+                
+                    <a href="../topics/adapter_error_handling.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.12.</b>
+                        
+                        Error Handling
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="topics/multi-tenancy.html">
+            
+                
+                    <a href="../topics/multi-tenancy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.13.</b>
+                        
+                        Multi Tenancy
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="topics/jaas.html">
+            
+                
+                    <a href="../topics/jaas.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.14.</b>
+                        
+                        JAAS plugin
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="topics/client-registration.html">
+            
+                
+                    <a href="../topics/client-registration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Client Registration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="10" data-path="topics/identity-broker.html">
+            
+                
+                    <a href="../topics/identity-broker.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Identity Broker
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="topics/themes.html">
+            
+                
+                    <a href="../topics/themes.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Themes
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="topics/recaptcha.html">
+            
+                
+                    <a href="../topics/recaptcha.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Recaptcha Support on Registration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="topics/email.html">
+            
+                
+                    <a href="../topics/email.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Email
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="topics/access-types.html">
+            
+                
+                    <a href="../topics/access-types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        Client Access Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="topics/roles.html">
+            
+                
+                    <a href="../topics/roles.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Roles
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="topics/groups.html">
+            
+                
+                    <a href="../topics/groups.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Groups
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="topics/direct-access.html">
+            
+                
+                    <a href="../topics/direct-access.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Direct Access Grants
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="topics/service-accounts.html">
+            
+                
+                    <a href="../topics/service-accounts.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        Service Accounts
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="19" data-path="topics/cors.html">
+            
+                
+                    <a href="../topics/cors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>19.</b>
+                        
+                        CORS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="20" data-path="topics/timeouts.html">
+            
+                
+                    <a href="../topics/timeouts.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>20.</b>
+                        
+                        Cookie settings, Session Timeouts, and Token Lifespans
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="21" data-path="topics/admin-rest-api.html">
+            
+                
+                    <a href="../topics/admin-rest-api.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>21.</b>
+                        
+                        Admin REST API
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="22" data-path="topics/events.html">
+            
+                
+                    <a href="../topics/events.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>22.</b>
+                        
+                        Events
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="23" data-path="topics/user-federation.html">
+            
+                
+                    <a href="../topics/user-federation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>23.</b>
+                        
+                        User Federation SPI and LDAP/AD Integration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="24" data-path="topics/kerberos.html">
+            
+                
+                    <a href="../topics/kerberos.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>24.</b>
+                        
+                        Kerberos brokering
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="25" data-path="topics/export-import.html">
+            
+                
+                    <a href="../topics/export-import.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>25.</b>
+                        
+                        Export and Import
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="26" data-path="topics/cache.html">
+            
+                
+                    <a href="../topics/cache.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>26.</b>
+                        
+                        Server Cache
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="27" data-path="topics/saml.html">
+            
+                
+                    <a href="../topics/saml.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>27.</b>
+                        
+                        SAML SSO
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="28" data-path="topics/security-vulnerabilities.html">
+            
+                
+                    <a href="../topics/security-vulnerabilities.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>28.</b>
+                        
+                        Security Vulnerabilities
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="29" data-path="topics/clustering.html">
+            
+                
+                    <a href="../topics/clustering.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>29.</b>
+                        
+                        Clustering
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="30" data-path="topics/application-clustering.html">
+            
+                
+                    <a href="../topics/application-clustering.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>30.</b>
+                        
+                        Application Clustering
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="31" data-path="topics/proxy.html">
+            
+                
+                    <a href="../topics/proxy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>31.</b>
+                        
+                        Keycloak Security Proxy
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="32" data-path="topics/custom-attributes.html">
+            
+                
+                    <a href="../topics/custom-attributes.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>32.</b>
+                        
+                        Custom User Attributes
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="33" data-path="topics/protocol-mappers.html">
+            
+                
+                    <a href="../topics/protocol-mappers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>33.</b>
+                        
+                        OIDC Token and SAML Assertion Mappings
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="34" data-path="topics/auth-spi.html">
+            
+                
+                    <a href="../topics/auth-spi.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>34.</b>
+                        
+                        Custom Authentication, Registration, and Required Actions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="35" data-path="topics/MigrationFromOlderVersions.html">
+            
+                
+                    <a href="../topics/MigrationFromOlderVersions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>35.</b>
+                        
+                        Migration from older versions
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Keycloak</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="identity-broker">Identity Broker</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>An Identity Broker is an intermediary service that connects multiple service providers with different identity providers.
+As an intermediary service, the identity broker is responsible to create a trust relationship with an external identity provider in order to use its identities to access internal services exposed by service providers.</p>
+</div>
+<div class="paragraph">
+<p>From an user perspective, an identity broker provides an user-centric and centralized way to manage identities across different security domains or realms, where an existing account can be linked with one or more identities from different identity providers or even created based on the identity information obtained from them.</p>
+</div>
+<div class="paragraph">
+<p>An identity provider is usually based on a specific protocol in order to authenticate and communicate authentication and authorization information to their users.
+It can be a social provider such as Facebook, Google or Twitter, a business partner which you want to allow its users to access your services or a cloud-based identity service that you want to integrate with.
+Usually, identity providers are based on the following protocols:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SAML v2.0</code></p>
+</li>
+<li>
+<p><code>OpenID Connect v1.0</code></p>
+</li>
+<li>
+<p><code>oAuth v2.0</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the next sections we&#x2019;ll see how to configure and use Keycloak as an identity broker, covering some important aspects such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Social Authentication</code></p>
+</li>
+<li>
+<p><code>OpenID Connect v1.0 Brokering</code></p>
+</li>
+<li>
+<p><code>SAML v2.0 Brokering</code></p>
+</li>
+<li>
+<p><code>Identity Federation</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_identity_broker_overview">Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When using Keycloak as an identity broker, users are not forced to provide their credentials in order to authenticate in a specific realm.
+Instead of that, they are presented with a list of identity providers from where they can pick one and authenticate.
+You can also configure a hard-coded default broker.
+In this case the user will not be given a choice, but instead be redirected directly the the parent broker.
+The following diagram demonstrates the steps involved when using Keycloak to broker an external identity provider:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User is not authenticated and requests a protected resource in a service provider.</p>
+</li>
+<li>
+<p>The service provider redirects the user to Keycloak to authenticate.</p>
+</li>
+<li>
+<p>At this point the user is presented to the login page where there is a list of identity providers supported by a realm.</p>
+</li>
+<li>
+<p>User selects one of the identity providers by clicking on its respective button or link.</p>
+</li>
+<li>
+<p>Keycloak issues an authentication request to the target identity provider asking for authentication and the user is redirect to the login page or just to a consent page in the identity provider.
+The connection properties and other configuration options for the identity provider were previously set by the administrator in the admin console.</p>
+</li>
+<li>
+<p>User provides his credentials or consent in order to authenticate in the identity provider.</p>
+</li>
+<li>
+<p>Upon a successful authentication by the identity provider, the user is redirected back to Keycloak with an authentication response.
+Usually this response contains a security token that will be used by Keycloak to trust the authentication performed by the identity provider and retrieve information about the user.</p>
+</li>
+<li>
+<p>Now Keycloak is going to check if the response from the identity provider is valid.
+If valid, it will create an user or just skip that if the user already exists.
+If it is a new user, Keycloak may ask informations about the user to the identity provider (or just read that from a security token) and create the user locally.
+This is what we call <em>identity federation</em>.
+If the user already exists Keycloak may ask him to link the identity returned from the identity provider with his existing account.
+A process that we call <em>account linking</em>.
+What exactly is done is configurable and can be specified by setup of <a href="#_identity_broker_first_login">First Login Flow</a> . At the end of this step, Keycloak authenticates the user and issues its own token in order to access the requested resource in the service provider.</p>
+</li>
+<li>
+<p>Once the user is locally authenticated, Keycloak redirects the user to the service provider by sending the token previously issued during the local authentication.</p>
+</li>
+<li>
+<p>The service provider receives the token from Keycloak and allows access to the protected resource.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>There are some variations of this flow that we will talk about later.
+For instance, instead of present a list of identity providers, the service provider can automatically select a specific one to authenticate an user.
+Or you can tell Keycloak to force the user to provide additional information before federate his identity.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Different protocols may require different authentication flows.
+At this moment, all the identity providers supported by KeyCloak use a flow just like described above.
+However, despite the protocol in use, user experience should be pretty much the same.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>As you may notice, at the end of the authentication process Keycloak will always issue its own token to service providers, what means that service providers are completely decoupled from external identity providers.
+They don&#x2019;t need to know which protocol (eg.: SAML, OpenID Connect, oAuth, etc) was used or how the user&#x2019;s identity was validated.
+They only need to know about Keycloak !</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration">Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The identity broker configuration is all based on identity providers.
+Identity providers are created for each realm and by default they are enabled for every single application.
+That means that users from a realm can use any of the registered identity providers when signing in to an application.</p>
+</div>
+<div class="paragraph">
+<p>In order to create an identity provider, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the admin console, select a realm.</p>
+</li>
+<li>
+<p>On the left side menu, click on <code>Settings</code>.</p>
+</li>
+<li>
+<p>Select the <code>Identity Provider</code> tab on the settings page.</p>
+</li>
+<li>
+<p>You should now be able to see a table that lists all registered identity providers.
+To add a new identity provider, click the select box on the top right of this table and select which type of identity provider you want to create.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Identity providers are organized in two main categories:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Social</dt>
+<dd>
+<p>Social providers allows you to enable social authentication to your realm.
+Keycloak makes it easy to let users log in to your application using an existing account with a social network.
+Currently Facebook, Google, Twitter, GitHub, LinkedIn, Microsoft and StackOverflow are supported with more planned for the future.</p>
+</dd>
+<dt class="hdlist1">Protocol-based</dt>
+<dd>
+<p>Protocol-based providers are those that rely on a specific protocol in order to authenticate and authorize users.
+They allow you to connect to any identity provider compliant with a specific protocol.
+Keycloak provides support for SAML v2.0 and OpenID Connect v1.0 protocols.
+It makes it easy to configure and broker any identity provider based on these open standards.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Although each type of identity provider has its own configuration options, all of them share some very common configuration.
+Regardless the identity provider you are creating, you&#x2019;ll see the following configuration options avaiable:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Common Configuration</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alias</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The alias is an unique identifier for an identity provider. It is used to reference internally an identity provider.
+                            Some protocols require a redirect uri or callback url in order to communicate with an identity provider. For instance, OpenID Connect.
+                            In this case, the alias is used to build the redirect uri.
+                            Every single identity provider must have an alias. For example, facebook, google, idp.acme.com, etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enabled</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Authenticate By Default</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If enabled, Keycloak will automatically redirect to this identity provider even before displaying login screen.
+                            In other words, steps 3 and 4 from the base flow are skipped.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Store Tokens</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stored Tokens Readable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Automatically assigns a broker.read-token role that allows the user
+                            to access any stored external tokens via the broker service.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trust email</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GUI order</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First Login Flow</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alias of authentication flow, which is triggered during first login with this identity provider. Term First Login
+                            means that there is not yet existing Keycloak account linked with the authenticated identity provider account.
+                            More details in First Login section.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Post Login Flow</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>On the next sections, we&#x2019;ll see how to configure each type of identity provider individually.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_social_identity_providers">Social Identity Providers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Forcing users to register to your realm when they want to access applications is hard.
+So is trying to remember yet another username and password combination.
+Social identity providers makes it easy for users to register on your realm and quickly sign in using a social network.
+Keycloak provides built-in support for the most common social networks out there, such as Google, Facebook, Twitter, Github, LinkedId, Microsoft and StackOverflow.</p>
+</div>
+<div class="sect2">
+<h3 id="_google">Google</h3>
+<div class="paragraph">
+<p>To enable login with Google you first have to create a project and a client in the <a href="https://cloud.google.com/console/project" target="_blank">Google Developer Console</a>.
+Then you need to copy the client id and secret into the Keycloak Admin Console.</p>
+</div>
+<div class="paragraph">
+<p>Let&#x2019;s see first how to create a project with Google.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the <a href="https://cloud.google.com/console/project" target="_blank">Google Developer Console</a>.
+Click the <code>Create Project</code> button.
+Use any value for <code>Project name</code> and <code>Project ID</code> you want, then click the <code>Create</code> button.
+Wait for the project to be created (this may take a while).</p>
+</li>
+<li>
+<p>Once the project has been created click on <code>APIs &amp; auth</code> in sidebar on the left.
+To retrieve user profiles the <code>Google+ API</code> has to be enabled.
+Scroll down to find it in the list.
+If its status is <code>OFF</code>, click on <code>OFF</code> to enable it (it should move to the top of the list and the status should be <code>ON</code>).</p>
+</li>
+<li>
+<p>Now click on the <code>Consent screen</code> link on the sidebar menu on the left.
+You must specify a project name and choose an email for the consent screen.
+Otherwise users will get a login error.
+There&#x2019;s other things you can configure here like what the consent screen looks like.
+Feel free to play around with this.</p>
+</li>
+<li>
+<p>Now click <code>Credentials</code> in the sidebar on the left.
+Then click <code>Create New Client ID</code>.
+Select <code>Web application</code> as <code>Application type</code>.
+Empty the <code>Authorized Javascript origins</code> textarea.
+Click the <code>Create Client ID</code> button.</p>
+</li>
+<li>
+<p>Copy <code>Client ID</code> and <code>Client secret</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Now that you have the client id and secret, you can proceed with the creation of a Google Identity Provider in Keycloak.
+As follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the <code>Google</code> identity provider from the drop-down box on the top right corner of the identity providers table in Keycloak&#x2019;s Admin Console.
+You should be presented with a specific page to configure the selected provided.</p>
+</li>
+<li>
+<p>Copy the client id and secret to their corresponding fields in the Keycloak Admin Console.
+Click <code>Save</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once you create the identity provider in Keycloak, you must update your Google project with the redirect url that was generated to your identity provider.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the Google Developer Console and select your project.
+Click <code>Credentials</code> in the sidebar on the left.
+In <code>Authorized redirect URI</code> insert the redirect uri created by Keycloak.
+The redirect uri usually have the following format: <code>http://{host}:{port}/auth/realms/{realm}/broker/{provider_alias}</code>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can always get the redirect url for a specific identity provider from the table presented when you click on the &apos;Identity Provider&apos; tab in <em>Realm &gt; Settings</em>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>That is it! This is pretty much what you need to do in order to setup this identity provider.</p>
+</div>
+<div class="paragraph">
+<p>The table below lists some additional configuration options you may use when configuring this provider.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Configuration Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Scopes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows you to manually specify the scopes that users must authorize when authenticating with this provider. For a complete list of scopes, please take a look at <a href="https://developers.google.com/oauthplayground/" class="bare" target="_blank">https://developers.google.com/oauthplayground/</a>. By default, Keycloak uses the following scopes: openid profile email</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_facebook">Facebook</h3>
+<div class="paragraph">
+<p>To enable login with Facebook you first have to create an application in the <a href="https://developers.facebook.com/" target="_blank">Facebook Developer Console</a>.
+Then you need to copy the client id and secret into the Keycloak Admin Console.</p>
+</div>
+<div class="paragraph">
+<p>Let&#x2019;s see first how to create an application with Facebook.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the <a href="https://developers.facebook.com/" target="_blank">Facebook Developer Console</a>.
+Click <code>Apps</code> in the menu and select <code>Create a New App</code>.
+Use any value for <code>Display Name</code> and <code>Category</code> you want, then click the <code>Create App</code> button.
+Wait for the project to be created (this may take a while). If after creating the app you are not redirected to the app settings, click on <code>Apps</code> in the menu and select the app you created.</p>
+</li>
+<li>
+<p>Once the app has been created click on <code>Settings</code> in sidebar on the left.
+You must specify a contact email.
+Save your changes.
+Then click on <code>Advanced</code>.
+Under <code>Security</code> make sure <code>Client OAuth Login</code> is enabled.
+Scroll down and click on the <code>Save Changes</code> button.</p>
+</li>
+<li>
+<p>Click <code>Status &amp; Review</code> and select <code>YES</code> for <code>Do you want
+to make this app and all its live features available to the general public?</code>.
+You will not be able to set this until you have provided a contact email in the general settings of this application.</p>
+</li>
+<li>
+<p>Click <code>Basic</code>.
+Copy <code>App ID</code> and <code>App Secret</code>                        (click <code>show</code>) from the <a href="https://developers.facebook.com/" target="_blank">Facebook Developer Console</a>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Now that you have the client id and secret, you can proceed with the creation of a Facebook Identity Provider in Keycloak.
+As follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the <code>Facebook</code> identity provider from the drop-down box on the top right corner of the identity providers table in Keycloak&#x2019;s Admin Console.
+You should be presented with a specific page to configure the selected provided.</p>
+</li>
+<li>
+<p>Copy the client id and secret to their corresponding fields in the Keycloak Admin Console.
+Click <code>Save</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once you create the identity provider in Keycloak, you must update your Facebook application with the redirect url that was generated to your identity provider.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the Facebook Developer Console and select your application.
+Click on <code>Advanced</code>.
+Under <code>Security</code> make sure <code>Client OAuth Login</code> is enabled.
+In <code>Valid OAuth redirect URIs</code> insert the redirect uri created by Keycloak.
+The redirect uri usually have the following format: <code>http://{host}:{port}/auth/realms/{realm}/broker/{provider_alias}</code>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can always get the redirect url for a specific identity provider from the table presented when you click on the &apos;Identity Provider&apos; tab in <em>Realm &gt; Settings</em>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>That is it! This pretty much what you need to do in order to setup this identity 		provider.</p>
+</div>
+<div class="paragraph">
+<p>The table below lists some additional configuration options you may use when configuring this provider.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. Configuration Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Scopes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows you to manually specify the scopes that users must authorize when authenticating with this provider. For a complete list of scopes, please take a look at <a href="https://developers.facebook.com/docs/graph-api" class="bare" target="_blank">https://developers.facebook.com/docs/graph-api</a>. By default, Keycloak uses the following scopes: email</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_twitter">Twitter</h3>
+<div class="paragraph">
+<p>To enable login with Twtter you first have to create an application in the <a href="https://dev.twitter.com/apps" target="_blank">Twitter Developer Console</a>.
+Then you need to copy the consumer key and secret into the Keycloak Admin Console.</p>
+</div>
+<div class="paragraph">
+<p>Let&#x2019;s see first how to create an application with Twitter.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the <a href="https://dev.twitter.com/apps" target="_blank">Twitter Developer Console</a>.
+Click the <code>Create a new application</code> button.
+Use any value for <code>Name</code>, <code>Description</code> and <code>Website</code> you want.
+Insert the social callback url in <code>Callback URL</code>.
+Then click <code>Create your Twitter application</code>.</p>
+</li>
+<li>
+<p>Now click on <code>Settings</code> and tick the box <code>Allow this application to be used to Sign in with Twitter</code>, then click on <code>Update this Twitter application&#x2019;s settings</code>.</p>
+</li>
+<li>
+<p>Now click <code>API Keys</code> tab.
+Copy <code>API key</code> and <code>API secret</code> from the <a href="https://dev.twitter.com/apps" target="_blank">Twitter Developer Console</a>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Twitter doesn&#x2019;t allow <code>localhost</code> in the redirect URI.
+To test on a local server replace <code>localhost</code> with <code>127.0.0.1</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now that you have the client id and secret, you can proceed with the creation of a Twitter Identity Provider in Keycloak.
+As follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the <code>Twitter</code> identity provider from the drop-down box on the top right corner of the identity providers table in Keycloak&#x2019;s Admin Console.
+You should be presented with a specific page to configure the selected provided.</p>
+</li>
+<li>
+<p>Copy the client id and secret to their corresponding fields in the Keycloak Admin Console.
+Click <code>Save</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>That is it! This pretty much what you need to do in order to setup this identity 		provider.</p>
+</div>
+<div class="paragraph">
+<p>The table below lists some additional configuration options you may use when configuring this provider.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. Configuration Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_github">Github</h3>
+<div class="paragraph">
+<p>To enable login with GitHub you first have to create an application in <a href="https://github.com/settings/applications" target="_blank">GitHub Settings</a>.
+Then you need to copy the client id and secret into the Keycloak Admin Console.</p>
+</div>
+<div class="paragraph">
+<p>Let&#x2019;s see first how to create an application with GitHub.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to <a href="https://github.com/settings/applications" target="_blank">GitHub Settings</a>.
+Click the <code>Register new application</code> button.
+Use any value for <code>Application name</code>, <code>Homepage URL</code> and <code>Application Description</code> you want.
+Click the <code>Register application</code> button.</p>
+</li>
+<li>
+<p>Copy <code>Client ID</code> and <code>Client Secret</code> from the <a href="https://github.com/settings/applications" target="_blank">GitHub Settings</a>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Now that you have the client id and secret, you can proceed with the creation of a Github Identity Provider in Keycloak.
+As follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the <code>Github</code> identity provider from the drop-down box on the top right corner of the identity providers table in Keycloak&#x2019;s Admin Console.
+You should be presented with a specific page to configure the selected provided.</p>
+</li>
+<li>
+<p>Copy the client id and secret to their corresponding fields in the Keycloak Admin Console.
+Click <code>Save</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once you create the identity provider in Keycloak, you must update your GitHub application with the redirect url that was generated to your identity provider.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the GitHub Settings and select your application.
+In <code>Authorization callback URL</code>                        insert the redirect uri created by Keycloak.
+The redirect uri usually have the following format: <code>http://{host}:{port}/auth/realms/{realm}/broker/{provider_alias}</code>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can always get the redirect url for a specific identity provider from the table presented when you click on the &apos;Identity Provider&apos; tab in <em>Realm &gt; Settings</em>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>That is it! This pretty much what you need to do in order to setup this identity 		provider.</p>
+</div>
+<div class="paragraph">
+<p>The table below lists some additional configuration options you may use when configuring this provider.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. Configuration Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Scopes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows you to manually specify the scopes that users must authorize when authenticating with this provider. For a complete list of scopes, please take a look at <a href="https://developer.github.com/v3/oauth/#scopes" class="bare" target="_blank">https://developer.github.com/v3/oauth/#scopes</a>. By default, Keycloak uses the following scopes: user:email</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_linkedin">LinkedIn</h3>
+<div class="paragraph">
+<p>To enable login with LinkedIn you first have to create an application in <a href="https://www.linkedin.com/secure/developer" target="_blank">LinkedIn Developer Network</a>.
+Then you need to copy the client id and secret into the Keycloak Admin Console.</p>
+</div>
+<div class="paragraph">
+<p>Let&#x2019;s see first how to create an application with LinkedIn.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to <a href="https://www.linkedin.com/secure/developer" target="_blank">LinkedIn Developer Network</a>.
+Click the <code>Add New Application</code> link.
+Use any value for <code>Application Name</code>, <code>Website URL</code>, <code>Description</code>, <code>Developer Contact Email</code> and <code>Phone</code> you want.
+Select <code>r_basicprofile</code> and <code>r_emailaddress</code> in the <code>Default Scope</code> section.
+Click the <code>Add Application</code> button.</p>
+</li>
+<li>
+<p>Copy <code>Consumer Key / API Key</code> and <code>Consumer Secret / Secret Key</code> from the shown page.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Now that you have the client id and secret, you can proceed with the creation of a LinkedIn Identity Provider in Keycloak.
+As follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the <code>LinkedIn</code> identity provider from the drop-down box on the top right corner of the identity providers table in Keycloak&#x2019;s Admin Console.
+You should be presented with a specific page to configure the selected provided.</p>
+</li>
+<li>
+<p>Copy the client id and secret to their corresponding fields in the Keycloak Admin Console.
+Click <code>Save</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once you create the identity provider in Keycloak, you must update your LinkedIn application with the redirect url that was generated to your identity provider.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the LinkedIn Developer Network and select your application.
+In <code>OAuth 2.0 Redirect URLs</code>                        insert the redirect uri created by Keycloak.
+The redirect uri usually have the following format: <code>http://{host}:{port}/auth/realms/{realm}/broker/{provider_alias}/endpoint</code>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can always get the redirect url for a specific identity provider from the table presented when you click on the &apos;Identity Provider&apos; tab in <em>Realm &gt; Settings</em>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>That is it! This pretty much what you need to do in order to setup this identity provider.</p>
+</div>
+<div class="paragraph">
+<p>The table below lists some additional configuration options you may use when configuring this provider.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 6. Configuration Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Scopes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows you to manually specify the scopes that users must authorize when authenticating with this provider.
+                                For a complete list of scopes, please take a look at application configuration in LinkedIn Developer Network. By default, Keycloak uses the following scopes: r_basicprofile r_emailaddress</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_microsoft">Microsoft</h3>
+<div class="paragraph">
+<p>To enable login with Microsoft account you first have to register an OAuth application on <a href="https://account.live.com/developers/applications/index" target="_blank">Microsoft account Developer Center</a>.
+Then you need to copy the client id and secret into the Keycloak Admin Console.</p>
+</div>
+<div class="paragraph">
+<p>Let&#x2019;s see first how to create an application with Microsoft.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <a href="https://account.live.com/developers/applications/create" target="_blank">create new application on Microsoft account Developer Center</a> url and login here.
+Use any value for <code>Application Name</code>, <code>Application Logo</code> and <code>URLs</code> you want.
+In <code>API Settings</code> set <code>Target Domain</code> to the domain where your Keycloak instance runs.</p>
+</li>
+<li>
+<p>Copy <code>Client Id</code> and <code>Client Secret</code> from <code>App Settings</code> page.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Now that you have the client id and secret you can proceed with the creation of a Microsoft Identity Provider in Keycloak.
+As follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the <code>Microsoft</code> identity provider from the drop-down box on the top right corner of the identity providers table in Keycloak&#x2019;s Admin Console.
+You should be presented with a specific page to configure the selected provided.</p>
+</li>
+<li>
+<p>Copy the client id and client secret to their corresponding fields in the Keycloak Admin Console.
+Click <code>Save</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once you create the identity provider in Keycloak, you must update your Microsoft application with the redirect url that was generated to your identity provider.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the Microsoft account Developer Center and select <code>API Settings</code> of your application.
+In <code>Redirect URLs</code>                        insert the redirect uri created by Keycloak.
+The redirect uri usually have the following format: <code>http://{host}:{port}/auth/realms/{realm}/broker/microsoft/endpoint</code>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can always get the redirect url for a specific identity provider from the table presented when you click on the &apos;Identity Provider&apos; tab in <em>Realm &gt; Settings</em>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>That is it! This pretty much what you need to do in order to setup this identity provider.</p>
+</div>
+<div class="paragraph">
+<p>The table below lists some additional configuration options you may use when configuring this provider.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 7. Configuration Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Scopes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows you to manually specify the scopes that users must authorize when authenticating with this provider. For a complete list of scopes, please take a look at <a href="https://msdn.microsoft.com/en-us/library/hh243646.aspx" class="bare" target="_blank">https://msdn.microsoft.com/en-us/library/hh243646.aspx</a>. By default, Keycloak uses the following scopes: wl.basic,wl.emails</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_stackoverflow">StackOverflow</h3>
+<div class="paragraph">
+<p>To enable login with StackOverflow you first have to register an OAuth application on <a href="https://stackapps.com/" target="_blank">StackApps</a>.
+Then you need to copy the client id, secret and key into the Keycloak Admin Console.</p>
+</div>
+<div class="paragraph">
+<p>Let&#x2019;s see first how to create an application with StackOverflow.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <a href="http://stackapps.com/apps/oauth/register" target="_blank">registering your application on Stack Apps</a> url and login here.
+Use any value for <code>Application Name</code>, <code>Application Website</code> and <code>Description</code> you want.
+Set <code>OAuth Domain</code> to the domain where your Keycloak instance runs.
+Click the <code>Register Your Application</code> button.</p>
+</li>
+<li>
+<p>Copy <code>Client Id</code>, <code>Client Secret</code> and <code>Key</code> from the shown page.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Now that you have the client id, secret and key, you can proceed with the creation of a StackOverflow Identity Provider in Keycloak.
+As follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the <code>StackOverflow</code> identity provider from the drop-down box on the top right corner of the identity providers table in Keycloak&#x2019;s Admin Console.
+You should be presented with a specific page to configure the selected provided.</p>
+</li>
+<li>
+<p>Copy the client id, client secret and key to their corresponding fields in the Keycloak Admin Console.
+Click <code>Save</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>That is it! This pretty much what you need to do in order to setup this identity provider.</p>
+</div>
+<div class="paragraph">
+<p>The table below lists some additional configuration options you may use when configuring this provider.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 8. Configuration Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Scopes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows you to manually specify the scopes that users must authorize when authenticating with this provider.
+                                For a complete list of scopes, please take a look at application configuration in StackExchange API Authentication documentation. Keycloak uses the empty scope by default.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_saml_v2_0_identity_providers">SAML v2.0 Identity Providers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Keycloak can broker identity providers based on the SAML v2.0 protocol.</p>
+</div>
+<div class="paragraph">
+<p>In order to configure a SAML identity provider, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the <code>SAML v2.0</code> identity provider from the drop-down box on the top right corner of the identity providers table in Keycloak&#x2019;s Admin Console.
+You should be presented with a specific page to configure the selected provider.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When configuring a SAML identity provider you are presented with different configuration options in order to properly communicate and integrate with the external identity provider.
+In this case, you must keep in mind that Keycloak will act as an Service Provider that issues authentication requests(AuthnRequest) to the external identity provider.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 9. Configuration Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Import IdP SAML Metadata</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single Sign-On Service Url</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single Logout Service Url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Backchannel Logout</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NameID Policy Format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validating X509 Certificate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Want AuthnRequests Signed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Force Authentication</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validate Signature</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP-POST Binding Response</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can also import all this configuration data by providing a URL or XML file that points to the entity descriptor of the external SAML IDP you want to connect to.</p>
+</div>
+<div class="paragraph">
+<p>Once you create a SAML provider, there is an <code>EXPORT</code> button that appears when viewing that provider.
+Clicking this button will export a SAML entity descriptor which you can use to</p>
+</div>
+<div class="sect2">
+<h3 id="_sp_descriptor">SP Descriptor</h3>
+<div class="paragraph">
+<p>The SAML SP Descriptor XML file for the broker is available publically by going to this URL</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>                http[s]://{host:port}/auth/realms/{realm-name}/broker/{broker-alias}/endpoint/descriptor</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This URL is useful if you need to import this information into an IDP that needs or is more user friendly to load from a remote URL.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_openid_connect_v1_0_identity_providers">OpenID Connect v1.0 Identity Providers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Keycloak can broker identity providers based on the OpenID Connect v1.0 protocol.</p>
+</div>
+<div class="paragraph">
+<p>In order to configure a OIDC identity provider, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the <code>OpenID Connect v1.0</code> identity provider from the drop-down box on the top right corner of the identity providers table in Keycloak&#x2019;s Admin Console.
+You should be presented with a specific page to configure the selected provider.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When configuring an OIDC identity provider you are presented with different configuration options in order to send authentication requests to the external identity provider.
+In this case, the brokered identity provider must support the Authorization Code Flow (as defined by the specification) in order to authenticate the user and authorize access for the scopes specified in the configuration.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 10. Configuration Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Authorization Url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token Url</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logout Url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Backchannel Logout</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User Info Url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Client ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Client Secret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issuer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Scopes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows you to specify additional scopes when asking for user authentication and consent. By default, scope openid is always appended to the list of the scopes.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can also import all this configuration data by providing a URL or file that points to OpenID Provider Metadata (see OIDC Discovery specification)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_retrieving_tokens_from_identity_providers">Retrieving Tokens from Identity Providers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Keycloak allows you to store tokens and responses from identity providers during the authentication process.
+For that, you can use the <code>Store Token</code> configuration option, as mentioned before.</p>
+</div>
+<div class="paragraph">
+<p>It also allows you to retrieve these tokens and responses once the user is authenticated in order to use their information or use them to invoke external resources protected by these tokens.
+The latter case is usually related with social providers, where you usually need to use their tokens to invoke methods on their APIs.</p>
+</div>
+<div class="paragraph">
+<p>To retrieve a token for a particular identity provider you need to send a request as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">GET /auth/realms/{realm}/broker/{provider_alias}/token HTTP/<span class="hljs-number">1.1</span>
+Host: localhost:<span class="hljs-number">8080</span>
+Authorization: Bearer {keycloak_access_token}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this case, given that you are accessing an protected service in Keycloak, you need to send the access token issued by Keycloak during the user authentication.</p>
+</div>
+<div class="paragraph">
+<p>By default, the Keycloak access token issued for the application can&#x2019;t be automatically used for retrieve thirdparty token.
+A user will have to have the <code>broker.read-token</code> role.
+The client will also have to have that role in its scope.
+In the broker configuration page you can automatically assign this role to newly imported users by turning on the <code>Stored Tokens Readable</code> switch.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If your application is not at the same origin as the authentication server, make sure you have properly configured CORS.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_automatically_select_and_identity_provider">Automatically Select and Identity Provider</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each Identity provider has option <code>Authenticate By Default</code>, which allows that Identity provider is automatically selected during authentication.
+User won&#x2019;t even see Keycloak login page, but is automatically redirected to the identity provider.</p>
+</div>
+<div class="paragraph">
+<p>Applications can also automatically select an identity provider in order to authenticate an user.
+Selection per application is preferred over <code>Authenticate By Default</code> option if you need more control on when exactly is Identity provider automatically selected.</p>
+</div>
+<div class="paragraph">
+<p>Keycloak supports a specific HTTP query parameter that you can use as a hint to tell the server which identity provider should be used to authenticate the user.</p>
+</div>
+<div class="paragraph">
+<p>For that, you can append the <code>kc_idp_hint</code> as a query parameter to your application url, as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">GET /myapplication.com?kc_idp_hint=facebook HTTP/<span class="hljs-number">1.1</span>
+Host: localhost:<span class="hljs-number">8080</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this case, is expected that your realm has an identity provider with an alias <code>facebook</code>.</p>
+</div>
+<div class="paragraph">
+<p>If you are using <code>keycloak.js</code> adapter, you can also achieve the same behavior:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">var keycloak = <span class="hljs-keyword">new</span> Keycloak(<span class="hljs-string">&apos;keycloak.json&apos;</span>);
+
+keycloak.createLoginUrl({
+	idpHint: <span class="hljs-string">&apos;facebook&apos;</span>
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mapping_importing_saml_and_oidc_metadata">Mapping/Importing SAML and OIDC Metadata</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can import SAML assertion data, OpenID Connect ID Token claims, and Keycloak access token claims into new users that are imported from a brokered IDP.
+After you configure a broker, you&#x2019;ll see a <code>Mappers</code>            button appear.
+Click on that and you&#x2019;ll get to the list of mappers that are assigned to this broker.
+There is a <code>Create</code> button on this page.
+Clicking on this create button allows you to create a broker mapper.
+Broker mappers can import SAML attributes or OIDC ID/Access token claims into user attributes.
+You can assign a role mapping to a user if a claim or external role exists.
+There&#x2019;s a bunch of options here so just mouse over the tool tips to see what each mapper can do for you.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mapping_importing_user_profile_data_from_social_identity_provider">Mapping/Importing User profile data from Social Identity Provider</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can import user profile data provided by social identity providers like Google, GitHub, LinkedIn, Microsoft, Stackoverflow and Facebook  into new Keycloak user created from given social accounts.
+After you configure a broker, you&#x2019;ll see a <code>Mappers</code>            button appear.
+Click on that and you&#x2019;ll get to the list of mappers that are assigned to this broker.
+There is a <code>Create</code> button on this page.
+Clicking on this create button allows you to create a broker mapper.
+&quot;Attribute Importer&quot; mapper allows you to define path in JSON user profile data provided by the provider to get value from.
+You can use dot notation for nesting and square brackets to access fields in array by index.
+For example &apos;contact.address[0].country&apos;.  Then you can define name of Keycloak&#x2019;s user profile attribute this value is stored into.</p>
+</div>
+<div class="paragraph">
+<p>To investigate structure of user profile JSON data provided by social providers you can enable <code>DEBUG</code> level for  logger <code>org.keycloak.social.user_profile_dump</code> and login using given provider.
+Then you can find user profile  JSON structure in Keycloak log file.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_user_session_data">User Session Data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After a user logs in from the external IDP, there&#x2019;s some additional user session note data that Keycloak stores that you can access.
+This data can be propagated to the client requesting a login via the token or SAML assertion being passed back to it by using an appropriate client mapper.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">BROKER_PROVIDER_ID</dt>
+<dd>
+<p>This is the IDP alias of the broker used to perform the login.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_identity_broker_first_login">First Login Flow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When Keycloak successfully authenticates user through identity provider (step 8 in <a href="#_identity_broker_overview">Overview</a> chapter), there can be two situations:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>There is already Keycloak user account linked with the authenticated identity provider account.
+In this case, Keycloak will just authenticate as the existing user and redirect back to application (step 9 in <a href="#_identity_broker_overview">Overview</a> chapter).</p>
+</li>
+<li>
+<p>There is not yet existing Keycloak user account linked with the identity provider account.
+This situation is more tricky.
+Usually you just want to register new account into Keycloak database, but what if there is existing Keycloak account with same email like the identity provider account? Automatically link identity provider account with existing Keycloak account is not very good option as there are possible security flaws related to that&#x2026;&#x200B;</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Because we had various requirements what to do in second case, we changed the behaviour to be flexible and configurable through <a href="#_auth_spi">Authentication Flows SPI</a>.
+In admin console in Identity provider settings, there is option <code>First Login Flow</code>, which allows you to choose, which workflow will be used after &quot;first login&quot; with this identity provider account.
+By default it points to <code>first broker login</code> flow, but you can configure and use your own flow and use different flows for different identity providers etc.</p>
+</div>
+<div class="paragraph">
+<p>The flow itself is configured in admin console under <code>Authentication</code> tab.
+When you choose <code>First Broker Login</code> flow, you will see what authenticators are used by default.
+You can either re-configure existing flow (For example disable some authenticators, mark some of them as <code>required</code>, configure some authenticators etc). Or you can even create new authentication flow and/or write your own Authenticator implementations and use it in your flow.
+See <a href="#_auth_spi">Authentication Flows SPI</a> for more details on how to do it.</p>
+</div>
+<div class="paragraph">
+<p>For <code>First Broker Login</code> case, it might be useful if your Authenticator is subclass of <code>org.keycloak.authentication.authenticators.broker.AbstractIdpAuthenticator</code>            so you have access to all details about authenticated Identity provider account.
+But it&#x2019;s not a requirement.</p>
+</div>
+<div class="sect2">
+<h3 id="_default_first_login_flow">Default First Login Flow</h3>
+<div class="paragraph">
+<p>Let&#x2019;s describe the default behaviour provided by <code>First Broker Login</code> flow.
+There are those authenticators:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Review Profile</dt>
+<dd>
+<p>This authenticator might display the profile info page, where user can review his profile retrieved from identity provider.
+The authenticator is configurable.
+You can set <code>Update Profile On First Login</code> option.
+When <code>On</code>, users will be always presented with the profile page asking for additional information in order to federate their identities.
+When <code>missing</code>, users will be presented with the profile page only if some mandatory information (email, first name, last name) is not provided by identity provider.
+If <code>Off</code>, the profile page won&#x2019;t be displayed, unless user clicks in later phase on <code>Review profile info</code>                                link (page displayed in later phase by <code>Confirm Link Existing Account</code> authenticator)</p>
+</dd>
+<dt class="hdlist1">Create User If Unique</dt>
+<dd>
+<p>This authenticator checks if there is already existing Keycloak account with same email or username like the account from identity provider.
+If it&#x2019;s not, then authenticator just creates new Keyclok account and link it with identity provider and whole flow is finished.
+Otherwise it goes to the next <code>Handle Existing Account</code> subflow.
+If you always want to ensure that there is no duplicated account, you can mark this authenticator as <code>REQUIRED</code> . In this case, the user will see the error page if there is existing Keycloak account and user needs to link his identity provider account through Account management.</p>
+</dd>
+<dt class="hdlist1">Confirm Link Existing Account</dt>
+<dd>
+<p>User will see the info page, that there is existing Keycloak account with same email.
+He can either review his profile again and use different email or username (flow is restarted and goes back to <code>Review Profile</code> authenticator). Or he can confirm that he wants to link identity provider account with his existing Keycloak account.
+Disable this authenticator if you don&#x2019;t want users to see this confirmation page, but go straight to linking identity provider account by email verification or re-authentication.</p>
+</dd>
+<dt class="hdlist1">Verify Existing Account By Email</dt>
+<dd>
+<p>This authenticator is <code>ALTERNATIVE</code> by default, so it&#x2019;s used only if realm has SMTP setup configured.
+It will send mail to user, where he can confirm that he wants to link identity provider with his Keycloak account.
+Disable this if you don&#x2019;t want to confirm linking by email, but instead you always want users to reauthenticate with their password (and alternatively OTP).</p>
+</dd>
+<dt class="hdlist1">Verify Existing Account By Re-authentication</dt>
+<dd>
+<p>This authenticator is used if email authenticator is disabled or non-available (SMTP not configured for realm). It will display login screen where user needs to authenticate with his password to link his Keycloak account with Identity provider.
+User can also re-authenticate with some different identity provider, which is already linked to his keycloak account.
+You can also force users to use OTP, otherwise it&#x2019;s optional and used only if OTP is already set for user account.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples">Examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Keycloak provides some useful examples about how to use it as an identity broker.
+Take a look at <code>{KEYCLOAK_HOME}/examples/broker</code> for more details.</p>
+</div>
+<div class="paragraph">
+<p>Each example application has its own README file where you can find additional information about how to configure Keycloak and run it.</p>
+</div>
+</div>
+</div>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../topics/client-registration.html" class="navigation navigation-prev " aria-label="Previous page: Client Registration"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../topics/themes.html" class="navigation navigation-next " aria-label="Next page: Themes"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

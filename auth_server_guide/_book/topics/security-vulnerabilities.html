@@ -1,0 +1,1087 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Security Vulnerabilities | Keycloak</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../topics/clustering.html" />
+    
+    
+    <link rel="prev" href="../topics/saml.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="28"
+        data-chapter-title="Security Vulnerabilities"
+        data-filepath="topics/security-vulnerabilities.adoc"
+        data-basepath=".."
+        data-revision="Tue Apr 05 2016 21:38:08 GMT+0530 (IST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="topics/preface.html">
+            
+            <span><b>1.</b> Overview</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="topics/Overview.html">
+            
+                
+                    <a href="../topics/Overview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Overview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="topics/server-installation.html">
+            
+                
+                    <a href="../topics/server-installation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Installation and Configuration of Keycloak Server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="topics/providers.html">
+            
+                
+                    <a href="../topics/providers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Providers and SPIs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="topics/openshift.html">
+            
+                
+                    <a href="../topics/openshift.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Running Keycloak Server on OpenShift
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="topics/admin-permissions.html">
+            
+                
+                    <a href="../topics/admin-permissions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Master Admin Access Control
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="topics/per-realm-admin-permissions.html">
+            
+                
+                    <a href="../topics/per-realm-admin-permissions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Per Realm Admin Access Control
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="topics/adapter-config.html">
+            
+                
+                    <a href="../topics/adapter-config.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Adapters
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="topics/jboss-adapter.html">
+            
+                
+                    <a href="../topics/jboss-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        JBoss/Wildfly Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="topics/tomcat-adapter.html">
+            
+                
+                    <a href="../topics/tomcat-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        Tomcat 6, 7 and 8 Adapters
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="topics/jetty9-adapter.html">
+            
+                
+                    <a href="../topics/jetty9-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        Jetty 9.x Adapters
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="topics/jetty8-adapter.html">
+            
+                
+                    <a href="../topics/jetty8-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        Jetty 8.1.x Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="topics/servlet-filter-adapter.html">
+            
+                
+                    <a href="../topics/servlet-filter-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                        Java Servlet Filter Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="topics/fuse-adapter.html">
+            
+                
+                    <a href="../topics/fuse-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                        JBoss Fuse and Apache Karaf Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="topics/javascript-adapter.html">
+            
+                
+                    <a href="../topics/javascript-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.7.</b>
+                        
+                        Javascript Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="topics/spring-boot-adapter.html">
+            
+                
+                    <a href="../topics/spring-boot-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.8.</b>
+                        
+                        Spring Boot Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="topics/spring-security-adapter.html">
+            
+                
+                    <a href="../topics/spring-security-adapter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.9.</b>
+                        
+                        Spring Security Adapter
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="topics/installed-applications.html">
+            
+                
+                    <a href="../topics/installed-applications.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.10.</b>
+                        
+                        Installed Applications
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="topics/logout.html">
+            
+                
+                    <a href="../topics/logout.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.11.</b>
+                        
+                        Logout
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="topics/adapter_error_handling.html">
+            
+                
+                    <a href="../topics/adapter_error_handling.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.12.</b>
+                        
+                        Error Handling
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="topics/multi-tenancy.html">
+            
+                
+                    <a href="../topics/multi-tenancy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.13.</b>
+                        
+                        Multi Tenancy
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.14" data-path="topics/jaas.html">
+            
+                
+                    <a href="../topics/jaas.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.14.</b>
+                        
+                        JAAS plugin
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="topics/client-registration.html">
+            
+                
+                    <a href="../topics/client-registration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Client Registration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="topics/identity-broker.html">
+            
+                
+                    <a href="../topics/identity-broker.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Identity Broker
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="topics/themes.html">
+            
+                
+                    <a href="../topics/themes.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Themes
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="topics/recaptcha.html">
+            
+                
+                    <a href="../topics/recaptcha.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Recaptcha Support on Registration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="topics/email.html">
+            
+                
+                    <a href="../topics/email.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Email
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="topics/access-types.html">
+            
+                
+                    <a href="../topics/access-types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        Client Access Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="topics/roles.html">
+            
+                
+                    <a href="../topics/roles.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Roles
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="topics/groups.html">
+            
+                
+                    <a href="../topics/groups.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Groups
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="topics/direct-access.html">
+            
+                
+                    <a href="../topics/direct-access.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Direct Access Grants
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="topics/service-accounts.html">
+            
+                
+                    <a href="../topics/service-accounts.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        Service Accounts
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="19" data-path="topics/cors.html">
+            
+                
+                    <a href="../topics/cors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>19.</b>
+                        
+                        CORS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="20" data-path="topics/timeouts.html">
+            
+                
+                    <a href="../topics/timeouts.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>20.</b>
+                        
+                        Cookie settings, Session Timeouts, and Token Lifespans
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="21" data-path="topics/admin-rest-api.html">
+            
+                
+                    <a href="../topics/admin-rest-api.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>21.</b>
+                        
+                        Admin REST API
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="22" data-path="topics/events.html">
+            
+                
+                    <a href="../topics/events.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>22.</b>
+                        
+                        Events
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="23" data-path="topics/user-federation.html">
+            
+                
+                    <a href="../topics/user-federation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>23.</b>
+                        
+                        User Federation SPI and LDAP/AD Integration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="24" data-path="topics/kerberos.html">
+            
+                
+                    <a href="../topics/kerberos.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>24.</b>
+                        
+                        Kerberos brokering
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="25" data-path="topics/export-import.html">
+            
+                
+                    <a href="../topics/export-import.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>25.</b>
+                        
+                        Export and Import
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="26" data-path="topics/cache.html">
+            
+                
+                    <a href="../topics/cache.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>26.</b>
+                        
+                        Server Cache
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="27" data-path="topics/saml.html">
+            
+                
+                    <a href="../topics/saml.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>27.</b>
+                        
+                        SAML SSO
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="28" data-path="topics/security-vulnerabilities.html">
+            
+                
+                    <a href="../topics/security-vulnerabilities.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>28.</b>
+                        
+                        Security Vulnerabilities
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="29" data-path="topics/clustering.html">
+            
+                
+                    <a href="../topics/clustering.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>29.</b>
+                        
+                        Clustering
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="30" data-path="topics/application-clustering.html">
+            
+                
+                    <a href="../topics/application-clustering.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>30.</b>
+                        
+                        Application Clustering
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="31" data-path="topics/proxy.html">
+            
+                
+                    <a href="../topics/proxy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>31.</b>
+                        
+                        Keycloak Security Proxy
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="32" data-path="topics/custom-attributes.html">
+            
+                
+                    <a href="../topics/custom-attributes.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>32.</b>
+                        
+                        Custom User Attributes
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="33" data-path="topics/protocol-mappers.html">
+            
+                
+                    <a href="../topics/protocol-mappers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>33.</b>
+                        
+                        OIDC Token and SAML Assertion Mappings
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="34" data-path="topics/auth-spi.html">
+            
+                
+                    <a href="../topics/auth-spi.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>34.</b>
+                        
+                        Custom Authentication, Registration, and Required Actions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="35" data-path="topics/MigrationFromOlderVersions.html">
+            
+                
+                    <a href="../topics/MigrationFromOlderVersions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>35.</b>
+                        
+                        Migration from older versions
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Keycloak</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="security-vulnerabilities">Security Vulnerabilities</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter discusses possible security vulnerabilities Keycloak could have, how Keycloak mitigates those vulnerabilities, and what steps you need to do to configure Keycloak to mitigate some vulnerabilities.
+A good list of potential vulnerabilities and what security implementations should do to mitigate them can be found in the <a href="http://tools.ietf.org/html/rfc6819" target="_blank">OAuth 2.0 Threat Model</a> document put out by the IETF.
+Many of those vulnerabilities are discussed here.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ssl_https_requirement">SSL/HTTPS Requirement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you do not use SSL/HTTPS for all communication between the Keycloak auth server and the clients it secures you will be very vulnerable to man in the middle attacks.
+OAuth 2.0/OpenID Connect uses access tokens for security.
+Without SSL/HTTPS, attackers can sniff your network and obtain an access token.
+Once they have an access token they can do any operation that the token has been given permission for.</p>
+</div>
+<div class="paragraph">
+<p>Keycloak has <a href="#_ssl_modes">three modes for SSL/HTTPS</a>.
+SSL can be hard to set up, so out of the box, Keycloak allows non-HTTPS communication over private IP addresses like localhost, 192.168.x.x, and other private IP addresses.
+In production, you should make sure SSL is enabled and required across the board.</p>
+</div>
+<div class="paragraph">
+<p>On the adapter/client side, Keycloak allows you to turn off the SSL trust manager.
+The trust manager ensures identity the client is talking to.
+It checks the DNS domain name against the server&#x2019;s certificate.
+In production you should make sure that each of your client adapters is configured to use a truststore.
+Otherwise you are vulnerable to DNS man in the middle attacks.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_csrf_attacks">CSRF Attacks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cross-site request forgery (CSRF) is a web-based attack whereby HTTP requests are transmitted from a user that the web site trusts or has authenticated (e.g., via HTTP redirects or HTML forms).  Any site that uses cookie based authentication is vulnerable for these types of attacks.
+These attacks are mitigated by matching a state cookie against a posted form or query parameter.</p>
+</div>
+<div class="paragraph">
+<p>OAuth 2.0 login specification requires that a state cookie be used and matched against a transmitted state parameter.
+Keycloak fully implements this part of the specification so all logins are protected.</p>
+</div>
+<div class="paragraph">
+<p>The Keycloak adminstration console is a pure Javascript/HTML5 application that makes REST calls to the backend Keycloak admin API.
+These calls all require bearer token authentication and are made via Javascript Ajax calls.
+CSRF does not apply here.
+The admin REST API can also be configured to validate CORS origins as well.</p>
+</div>
+<div class="paragraph">
+<p>The only part of Keycloak that really falls into CSRF is the user account management pages.
+To mitigate this Keycloak sets a state cookie and also embeds the value of this state cookie within hidden form fields or query parameters in action links.
+This query or form parameter is checked against the state cookie to verify that the call was made by the user.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clickjacking">Clickjacking</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With clickjacking, a malicious site loads the target site in a transparent iFrame overlaid on top of a set of dummy buttons that are carefully constructed to be placed directly under important buttons on the target site.
+When a user clicks a visible button, they are actually clicking a button (such as an &quot;Authorize&quot; button) on the hidden page.
+An attacker can steal a user&#x2019;s authentication credentials and access their resources.</p>
+</div>
+<div class="paragraph">
+<p>By default, every response by Keycloak sets some specific browser headers that can prevent this from happening specifically <a href="http://tools.ietf.org/html/rfc7034" target="_blank">X-FRAME_OPTIONS</a> and <a href="http://www.w3.org/TR/CSP/" target="_blank">Content-Security-Policy</a>.
+You should take a look at both of these headers.
+In the admin console you can specify the values these headers will have.
+By default, Keycloak only sets up a same-origin policy for iframes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compromised_access_codes">Compromised Access Codes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It would be very hard for an attacker to compromise Keycloak access codes.
+Keycloak generates a cryptographically strong random value for its access codes so it would be very hard to guess an access token.
+An access code can only be turned into an access token once so it can&#x2019;t be replayed.
+In the admin console you can specify how long an access token is valid for.
+This value should be really short.
+Like a seconds.
+Just long enough for the client to make the request to turn the code into an token.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compromised_access_and_refresh_tokens">Compromised access and refresh tokens</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There&#x2019;s a few things you can do to mitigate access tokens and refresh tokens from being stolen.
+Most importantly is to enforce SSL/HTTPS communication between Keycloak and its clients and applications.
+Short lifespans (minutes) for access tokens allows Keycloak to check the validity of a refresh token.
+Making sure refresh tokens always stay private to the client and are never transmitted ever is very important as well.</p>
+</div>
+<div class="paragraph">
+<p>If an access token or refresh token is compromised, the first thing you should do is go to the admin console and push a not-before revocation policy to all applications.
+This will enforce that any tokens issued prior to that date are now invalid.
+You can also disable specific applications, clients, and users if you feel that any one of those entities is completely compromised.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_open_redirectors">Open redirectors</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An attacker could use the end-user authorization endpoint and the redirect URI parameter to abuse the authorization server as an open redirector.
+An open redirector is an endpoint using a parameter to automatically redirect a user agent to the location specified by the parameter value without any validation.
+An attacker could utilize a user&#x2019;s trust in an authorization server to launch a phishing attack.</p>
+</div>
+<div class="paragraph">
+<p>Keycloak requires that all registered applications and clients register at least one redirection uri pattern.
+Any time a client asks Keycloak to perform a redirect (on login or logout for example), Keycloak will check the redirect uri vs.
+the list of valid registered uri patterns.
+It is important that clients and applications register as specific a URI pattern as possible to mitigate open redirector attacks.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_password_guess_brute_force_attacks">Password guess: brute force attacks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A brute force attack happens when an attacker is trying to guess a user&#x2019;s password.
+Keycloak has some limited brute force detection capabilities.
+If turned on, a user account will be temporarily disabled if a threshold of login failures is reached.
+The downside of this is that this makes Keycloak vulnerable to denial of service attacks.
+Eventually we will expand this functionality to take client IP address into account when deciding whether to block a user.</p>
+</div>
+<div class="paragraph">
+<p>Another thing you can do to prevent password guessing is to point a tool like <a href="http://fail2ban.org" target="_blank">Fail2Ban</a> to the Keycloak server&#x2019;s log file.
+Keycloak logs every login failure and client IP address that had the failure.</p>
+</div>
+<div class="paragraph">
+<p>In the admin console, per realm, you can set up a password policy to enforce that users pick hard to guess passwords.
+A password has to match all policies.
+The password policies that can be configured are hash iterations, length, digits, lowercase, uppercase, special characters, not username, regex patterns, password history and force expired password update.
+Force expired password update policy forces or requires password updates after specified span of time.
+Password history policy  restricts a user from resetting his password to N old expired passwords.
+Multiple regex patterns can be specified.
+If there&#x2019;s more than one regex added, password has to match all fully.
+Increasing number of Hash Iterations (n) does not worsen anything (and certainly not the cipher) and it greatly increases the  resistance to dictionary attacks.
+However the drawback to increasing n is that it has some cost (CPU usage, energy, delay) for  the legitimate parties.
+Increasing n also slightly increases the odds that a random password gives the same result as the right  password due to hash collisions, and is thus a false but accepted password; however that remains very unlikely, in the order of  n*[1/(2^256)] for practical values of n, and can be entirely ignored in practice.
+Keycloak also uses PBKDF2 internally to  cryptographically derive passwords to refine and improve the ratio of cost between attacker and legitimate parties.
+Good practice is to pay attention to the time complexity of hash_password and hash; then increase n as much as tolerable in  the situation(s) at hand and and revise parameters such as n every few years to account for time complexity trade off.</p>
+</div>
+<div class="paragraph">
+<p>Finally, the best way to mitigate against brute force attacks is to require user to set up a one-time-password (OTP).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_password_database_compromised">Password database compromised</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Keycloak does not store passwords in raw text.
+It stores a hash of them.
+Because of performance reasons, Keycloak only hashes passwords once.
+While a human could probably never crack a hashed password, it is very possible that a computer could.
+The security community suggests around 20,000 (yes thousand!) hashing iterations to be done to each password.
+This number grows every year due to increasing computing power (It was 1000 12 years ago). The problem with this is that password hashing is a huge performance hit as each login would require the entered password to be hashed that many times and compared to the stored hash.
+So, its up to the admin to configure the password hash iterations.
+This can be done in the admin console password policy configuration.
+Again, the default value is 1 as we thought it might be more important for Keycloak to scale out of the box.
+There&#x2019;s a lot of other measures admins can do to protect their password databases.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sql_injection_attacks">SQL Injection attacks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At this point in time, there is no knowledge of any SQL injection vulnerabilities in Keycloak</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_limiting_scope">Limiting Scope</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using the <code>Scope</code> menu in the admin console for clients, you can control exactly which role mappings will be included within the token sent back to the client application.
+This allows you to limit the scope of permissions given to the client which is great if the client isn&#x2019;t very trusted and is known to not being very careful with its tokens.</p>
+</div>
+</div>
+</div>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../topics/saml.html" class="navigation navigation-prev " aria-label="Previous page: SAML SSO"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../topics/clustering.html" class="navigation navigation-next " aria-label="Next page: Clustering"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
