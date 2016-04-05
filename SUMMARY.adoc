@@ -1,4 +1,4 @@
 = Summary
 
-. Test
+. link:test.adoc[Test]
 
