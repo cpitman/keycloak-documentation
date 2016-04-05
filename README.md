@@ -1,2 +1,0 @@
-# keycloak-documentation
-Test
