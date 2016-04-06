@@ -1,0 +1,26 @@
+== Keycloak Reference Guide
+
+//. link:topics/templates/document-attributes.adoc[]
+:imagesdir: images			
+
+ . link:topics/saml_adapter_overview.adoc[Overview]
+ . link:topics/saml_adapter-config.adoc[General Adapter Config]
+ .. link:topics/saml_adapter_sp_element.adoc[SP Element]
+ .. link:topics/saml_adapter_sp_keys.adoc[SP Keys and Key elements]
+ ... link:topics/saml_adapter_keystore_element.adoc[KeyStore Element]
+ ... link:topics/saml_adapter_key_pems.adoc[Key PEMS]
+ .. link:topics/saml_adapter_sp_principalname_mapping_element.adoc[SP PrincipalNameMapping element]
+ .. link:topics/saml_adapter_roleidentifiers_element.adoc[RoleIdentifiers element]
+ .. link:topics/saml_adapter_idp_element.adoc[IDP Element]
+ .. link:topics/saml_adapter_idp_singlesignonservice_subelement.adoc[IDP SingleSignOnService sub element]
+ .. link:topics/saml_adapter_idp_singlelogoutservice_subelement.adoc[ IDP SingleLogoutService sub element]
+ .. link:topics/saml_adapter_idp_keys_subelement.adoc[IDP Keys subelement]
+ . link:topics/saml_adapter_jboss_adapter.adoc[JBoss/Wildfly Adapter]
+ .. link:topics/saml_adapter_jboss_adapter_installation.adoc[Adapter Installation]
+ .. link:topics/saml_adapter_required_per_war_configuration.adoc[Required Per WAR Configuration]
+ .. link:topics/saml_adapter_securing_wars.adoc[Securing WARs via Keycloak SAML Subsystem]
+ . link:topics/saml_adapter_tomcat_adapter.adoc[Tomcat 6, 7 and 8 SAML adapters]
+ .. link:topics/saml_adapter_tomcat_adapter_installation.adoc[Adapter Installation]
+ .. link:topics/saml_adapter_tomcat_adapter_per_war_config.adoc[Required Per WAR Configuration]
+
+ 

@@ -1,154 +1,59 @@
-= Summary
+== Keycloak Reference Guide
 
-:toc:
-:toclevels: 3
-:numbered:
-
-//include::topics/templates/document-attributes.adoc[]
-
+//. link:topics/templates/document-attributes.adoc[]
 :imagesdir: images
-//:admin-guide:
 
-= Keycloak Reference Guide
-
-// Preface
-== Preface
-
-In some of the example listings, what is meant to be displayed on one line does not fit inside the available page width.These lines have been broken up. A '\' at the end of a line means that a break has been introduced to fit in the page, with the following lines indented.
-So: 
-
-[source]
-----
-Let's pretend to have an extremely \
-long line that \
-does not fit
-This one is short
-----         
-Is really: 
-
-[source]
-----
-Let's pretend to have an extremely long line that does not fit
-This one is short
-----      
-
- . link:modules/Overview.adoc[Overview]
-
-
-// Overview
-include::modules/Overview.adoc[leveloffset=+1]
-
-// Installation and Configuration of Keycloak Server
-include::modules/server-installation.adoc[leveloffset=+1]
-
-// Providers and SPIs
-include::modules/providers.adoc[leveloffset=+1]
-
-//  Running Keycloak Server on OpenShift
-include::modules/openshift.adoc[leveloffset=+0]
-
-// Master Admin Access Control
-include::modules/admin-permissions.adoc[leveloffset=+0]
-
-// Per Realm Admin Access Control
-include::modules/per-realm-admin-permissions.adoc[leveloffset=+0]
-
-//  Adapters
-include::modules/adapter-config.adoc[leveloffset=+0]
-include::modules/jboss-adapter.adoc[leveloffset=+1]
-include::modules/tomcat-adapter.adoc[leveloffset=+1]
-include::modules/jetty9-adapter.adoc[leveloffset=+1]
-include::modules/jetty8-adapter.adoc[leveloffset=+1]
-include::modules/servlet-filter-adapter.adoc[leveloffset=+1]
-include::modules/fuse-adapter.adoc[leveloffset=+1]
-include::modules/javascript-adapter.adoc[leveloffset=+1]
-include::modules/spring-boot-adapter.adoc[leveloffset=+1]
-include::modules/spring-security-adapter.adoc[leveloffset=+1]
-include::modules/installed-applications.adoc[leveloffset=+1]
-include::modules/logout.adoc[leveloffset=+1]
-include::modules/adapter_error_handling.adoc[leveloffset=+1]
-include::modules/multi-tenancy.adoc[leveloffset=+1]
-include::modules/jaas.adoc[leveloffset=+1]
-
-// Client Registration
-include::modules/client-registration.adoc[leveloffset=+0]
-
-// Identity Broker
-include::modules/identity-broker.adoc[leveloffset=+0]
-
-// Themes
-include::modules/themes.adoc[leveloffset=+0]
-
-// Recaptcha Support on Registration
-include::modules/recaptcha.adoc[leveloffset=+0]
-
-// Email
-include::modules/email.adoc[leveloffset=+0]
-
-// Client Access Types
-include::modules/access-types.adoc[leveloffset=+0]
-
-// Roles
-include::modules/roles.adoc[leveloffset=+0]
-
-// Groups
-include::modules/groups.adoc[leveloffset=+0]
-
-// Direct Access Grants
-include::modules/direct-access.adoc[leveloffset=+0]
-
-// Service Accounts
-include::modules/service-accounts.adoc[leveloffset=+0]
-
-// CORS
-include::modules/cors.adoc[leveloffset=+0]
-
-// Cookie settings, Session Timeouts, and Token Lifespans
-include::modules/timeouts.adoc[leveloffset=+0]
-
-// Admin REST API
-include::modules/admin-rest-api.adoc[leveloffset=+0]
-
-// Events
-include::modules/events.adoc[leveloffset=+0]
-
-// User Federation SPI and LDAP/AD Integration
-include::modules/user-federation.adoc[leveloffset=+0]
-
-// Kerberos brokering
-include::modules/kerberos.adoc[leveloffset=+0]
-
-// Export and Import
-include::modules/export-import.adoc[leveloffset=+0]
-
-// Server Cache
-include::modules/cache.adoc[leveloffset=+0]
-
-// SAML SSO
-include::modules/saml.adoc[leveloffset=+0]
-
-// Security Vulnerabilities
-include::modules/security-vulnerabilities.adoc[leveloffset=+0]
-
-// Clustering
-include::modules/clustering.adoc[leveloffset=+0]
-
-// Application Clustering
-include::modules/application-clustering.adoc[leveloffset=+0]
-
-// Keycloak Security Proxy
-include::modules/proxy.adoc[leveloffset=+0]
-
-// Custom User Attributes
-include::modules/custom-attributes.adoc[leveloffset=+0]
-
-//  OIDC Token and SAML Assertion Mappings
-include::modules/protocol-mappers.adoc[leveloffset=+0]
-
-//  Custom Authentication, Registration, and Required Actions
-include::modules/auth-spi.adoc[leveloffset=+0]	
-
-//  Migration from older versions
-include::modules/MigrationFromOlderVersions.adoc[leveloffset=+0]
+ . link:topics/preface.adoc[Preface]
+ . link:topics/Overview.adoc[Overview]
+ .. link:topics/overview_key_concepts.adoc[Key Concepts in Keycloak]
+ .. link:topics/overview_How_Security_Work_in_Keycloak.adoc[How Security Work in Keycloak?]
+ ... link:topics/overview_permission_scopes.adoc[Permission Scopes]
+ . link:topics/server-installation.adoc[Installation and Configuration of Keycloak Server]
+ . link:topics/providers.adoc[Providers and SPIs]
+ . link:topics/openshift.adoc[Running Keycloak Server on OpenShift]
+ . link:topics/admin-permissions.adoc[Master Admin Access Control]
+ . link:topics/per-realm-admin-permissions.adoc[Per Realm Admin Access Control]
+ . link:topics/adapter-config.adoc[Adapters]
+ .. link:topics/jboss-adapter.adoc[JBoss/Wildfly Adapter]
+ .. link:topics/tomcat-adapter.adoc[Tomcat 6, 7 and 8 Adapters]
+ .. link:topics/jetty9-adapter.adoc[Jetty 9.x Adapters]
+ .. link:topics/jetty8-adapter.adoc[Jetty 8.1.x Adapter]
+ .. link:topics/servlet-filter-adapter.adoc[Java Servlet Filter Adapter]
+ .. link:topics/fuse-adapter.adoc[JBoss Fuse and Apache Karaf Adapter]
+ .. link:topics/javascript-adapter.adoc[Javascript Adapter]
+ .. link:topics/spring-boot-adapter.adoc[Spring Boot Adapter]
+ .. link:topics/spring-security-adapter.adoc[Spring Security Adapter]
+ .. link:topics/installed-applications.adoc[Installed Applications]
+ .. link:topics/logout.adoc[Logout]
+ .. link:topics/adapter_error_handling.adoc[Error Handling]
+ .. link:topics/multi-tenancy.adoc[ Multi Tenancy]
+ .. link:topics/jaas.adoc[JAAS plugin]
+ . link:topics/client-registration.adoc[Client Registration]
+ . link:topics/identity-broker.adoc[Identity Broker]
+ . link:topics/themes.adoc[Themes]
+ . link:topics/recaptcha.adoc[Recaptcha Support on Registration]
+ . link:topics/email.adoc[Email]
+ . link:topics/access-types.adoc[Client Access Types]
+ . link:topics/roles.adoc[Roles]
+ . link:topics/groups.adoc[Groups]
+ . link:topics/direct-access.adoc[Direct Access Grants]
+ . link:topics/service-accounts.adoc[Service Accounts]
+ . link:topics/cors.adoc[CORS]
+ . link:topics/timeouts.adoc[Cookie settings, Session Timeouts, and Token Lifespans]
+ . link:topics/admin-rest-api.adoc[Admin REST API]
+ . link:topics/events.adoc[Events]
+ . link:topics/user-federation.adoc[User Federation SPI and LDAP/AD Integration]
+ . link:topics/kerberos.adoc[Kerberos brokering]
+ . link:topics/export-import.adoc[Export and Import]
+ . link:topics/cache.adoc[Server Cache]
+ . link:topics/saml.adoc[SAML SSO]
+ . link:topics/security-vulnerabilities.adoc[Security Vulnerabilities]
+ . link:topics/clustering.adoc[Clustering]
+ . link:topics/application-clustering.adoc[Application Clustering]
+ . link:topics/proxy.adoc[Keycloak Security Proxy]
+ . link:topics/custom-attributes.adoc[Custom User Attributes]
+ . link:topics/protocol-mappers.adoc[OIDC Token and SAML Assertion Mappings]
+ . link:topics/auth-spi.adoc[Custom Authentication, Registration, and Required Actions]	
+ . link:topics/MigrationFromOlderVersions.adoc[Migration from older versions]
 
 
