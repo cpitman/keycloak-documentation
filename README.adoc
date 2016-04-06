@@ -1,6 +1,6 @@
 
-=======
-= Keycloak Documentations
+Keycloak Documentation
+======================
 
 image:images/keycloak_logo.png[alt="Keycloak"]
 
