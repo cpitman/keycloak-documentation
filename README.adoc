@@ -1,1 +1,10 @@
-= Keycloak Reference Guide
+
+=======
+= Keycloak Documentations
+
+image:images/keycloak_logo.png[alt="Keycloak"]
+
+*Keycloak* _Documentation_ for {{book.versions.swarm}}
+
+http://www.keycloak.org
+
