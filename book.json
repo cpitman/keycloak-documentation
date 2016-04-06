@@ -1,6 +1,7 @@
 {
     "plugins": [
-        "anchor-navigation"
+        "anchor-navigation",
+        "collapsible-menu"
     ],
     "pluginsConfig": {}
 }
