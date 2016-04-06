@@ -1,0 +1,7 @@
+= Keycloak Documentations
+
+image:images/logo.png[alt="Keycloak"]
+
+*Keycloak* _Documentation_ for {{book.versions.swarm}}
+
+http://www.keycloak.org
