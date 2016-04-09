@@ -42,6 +42,7 @@ Here's an example configuration file.
         {
             "base-path": "/customer-portal",
             "error-page": "/error.html",
+            "proxy-address-forwarding": false,
             "adapter-config": {
                 "realm": "demo",
                 "resource": "customer-portal",
@@ -141,7 +142,11 @@ error-page::
   If the proxy has an error, it will display the target application's error page relative URL _OPTIONAL._.
   This is a relative path to the base-path.
   In the example above it would be `/customer-portal/error.html`. 
-
+  
+proxy-address-forwarding::
+  If enabled, the proxy will use the X-Forwarded-For and X-Forwarded-Proto headers to modify the request before processing. This is required when the proxy is behind a TLS terminating reverse proxy or load balancer. If enabled, you must ensure both headers are always set by the proxy. If not set, malicious clients can spoof their source IP. _OPTIONAL._. 
+  Defaults to false.
+  
 adapter-config::
   _REQUIRED._.
   Same configuration as any other keycloak adapter.
